@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+.gitignore
+.idea/dbnavigator.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/unconscious_polling.iml
+.idea/workspace.xml
+__pycache__/
+notes.md
