@@ -91,14 +91,11 @@ def write_tweets(tweets, filename):
             f.write('\n')
 
 
-def main():
+def run_search(search_phrases):
     ''' This is a script that continuously searches for tweets
         that were created over a given number of days. The search
         dates and search phrase can be changed below. '''
 
-    ''' search variables: '''
-    search_phrases = ['#obamacare', '#makeamericagreatagain', '#notmypresident', 'Judge Roy Moore',
-                      'alabama roy moore teen', '#followthewhiterabbit', '#thestorm']
     time_limit = 1.5  # runtime limit in hours
     max_tweets = 100  # number of tweets per search (will be
     # iterated over) - maximum is 100
@@ -117,7 +114,7 @@ def main():
 
         ''' other variables '''
         name = search_phrase.split()[0]
-        json_file_root = name + '/' + name
+        json_file_root = 'data/' + name
         os.makedirs(os.path.dirname(json_file_root), exist_ok=True)
         read_IDs = False
 
@@ -181,5 +178,4 @@ def main():
                         break
 
 
-if __name__ == "__main__":
-    main()
+
