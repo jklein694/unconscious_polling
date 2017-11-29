@@ -6,6 +6,9 @@ import pandas as pd
 
 
 def run_cleaner():
+
+    print('Starting Data Cleaning')
+
     # List files in data directory
     file_paths = os.listdir('data')
 
@@ -38,10 +41,11 @@ def run_cleaner():
 
     for x, y in data.values:
         for j in x:
-            updated_list.append(([j, y]))
+            updated_list.append(([j.lower(), y.lower()]))
 
     # Create DataFrame and export to csv
     data = pd.DataFrame(updated_list, columns=['hashtag', 'tweet'])
+
 
     data.to_csv('clean_data.csv')
 
